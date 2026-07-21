@@ -3,7 +3,7 @@
 	"id": "${mod_id}",
 	"version": "${version}",
 	"name": "${mod_name}",
-	"description": "Example Mod Description",
+	"description": "Fly through snow with riptide and fire aspect",
 	"authors": [
 		"barnabeepickle"
 	],
