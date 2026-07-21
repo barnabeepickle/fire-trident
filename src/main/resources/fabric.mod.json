@@ -8,18 +8,18 @@
 		"barnabeepickle"
 	],
 	"contact": {
-		"homepage": "https://github.com/barnabeepickle/fabric-template",
-		"sources": "https://github.com/barnabeepickle/fabric-template"
+		"homepage": "https://github.com/barnabeepickle/fire-trident",
+		"sources": "https://github.com/barnabeepickle/fire-trident"
 	},
-	"license": "CC0",
-	"icon": "assets/examplemod/icon.png",
+	"license": "MIT",
+	"icon": "assets/firetrident/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.github.barnabeepickle.examplemod.ExampleMod"
+			"com.github.barnabeepickle.firetrident.FireTridentMod"
 		],
 		"modmenu": [
-			"com.github.barnabeepickle.examplemod.ModMenu"
+			"com.github.barnabeepickle.firetrident.ModMenu"
 		]
 	},
 	"depends": {
