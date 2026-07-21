@@ -22,6 +22,7 @@
 	"mixins": [
 		"firetrident.mixins.json"
 	],
+	"accessWidner": "firetrident.classtweaker",
 	"depends": {
 		"fabricloader": "*",
 		"fabric-api": "*",

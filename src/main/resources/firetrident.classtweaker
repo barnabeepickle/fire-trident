@@ -1,0 +1,3 @@
+classTweaker v1 intermediary
+
+mutable field net/minecraft/client/renderer/entity/layers/SpinAttackEffectLayer TEXTURE Lnet/minecraft/resources/Identifier;
