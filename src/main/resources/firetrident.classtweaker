@@ -1,3 +1,3 @@
-classTweaker v1 intermediary
+classTweaker v1 named
 
 mutable field net/minecraft/client/renderer/entity/layers/SpinAttackEffectLayer TEXTURE Lnet/minecraft/resources/Identifier;
