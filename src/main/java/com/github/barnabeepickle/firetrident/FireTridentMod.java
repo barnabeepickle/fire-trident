@@ -23,9 +23,7 @@ public class FireTridentMod implements ModInitializer {
 
 	}
 
-
 	public static Identifier FIRE_ASPECT = Identifier.fromNamespaceAndPath("minecraft", "fire_aspect");
-
 
 	public static boolean isInSnow(Entity entity) {
 		BlockPos blockPos = entity.blockPosition();
