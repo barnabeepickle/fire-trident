@@ -3,10 +3,10 @@
   "minVersion": "0.8",
   "package": "com.github.barnabeepickle.firetrident.mixins",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
-  "client": [
+  "mixins": [
     "TridentItemMixin"
   ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1
