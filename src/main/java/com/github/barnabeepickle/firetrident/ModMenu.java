@@ -1,4 +1,4 @@
-package com.github.barnabeepickle.examplemod;
+package com.github.barnabeepickle.firetrident;
 
 import com.terraformersmc.modmenu.api.ModMenuApi;
 
