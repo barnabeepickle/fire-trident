@@ -17,9 +17,6 @@
 	"entrypoints": {
 		"main": [
 			"com.github.barnabeepickle.firetrident.FireTridentMod"
-		],
-		"modmenu": [
-			"com.github.barnabeepickle.firetrident.ModMenu"
 		]
 	},
 	"mixins": [
