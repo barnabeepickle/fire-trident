@@ -22,6 +22,9 @@
 			"com.github.barnabeepickle.firetrident.ModMenu"
 		]
 	},
+	"mixins": [
+		"firetrident.mixins.json"
+	],
 	"depends": {
 		"fabricloader": "*",
 		"fabric-api": "*",
