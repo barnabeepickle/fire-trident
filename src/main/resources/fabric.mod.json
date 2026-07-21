@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "${mod_id}",
+	"version": "${version}",
+	"name": "${mod_name}",
+	"description": "Example Mod Description",
+	"authors": [
+		"barnabeepickle"
+	],
+	"contact": {
+		"homepage": "https://github.com/barnabeepickle/fabric-template",
+		"sources": "https://github.com/barnabeepickle/fabric-template"
+	},
+	"license": "CC0",
+	"icon": "assets/examplemod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.barnabeepickle.examplemod.ExampleMod"
+		],
+		"modmenu": [
+			"com.github.barnabeepickle.examplemod.ModMenu"
+		]
+	},
+	"depends": {
+		"fabricloader": "*",
+		"fabric-api": "*",
+		"minecraft": "~1.21.11"
+	}
+}
