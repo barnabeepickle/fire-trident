@@ -6,7 +6,9 @@
   "mixins": [
     "TridentItemMixin"
   ],
-  "client": [],
+  "client": [
+    "SpinAttackEffectLayerMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
