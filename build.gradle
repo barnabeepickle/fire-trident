@@ -27,6 +27,10 @@ repositories {
 		name = "ParchmentMC"
 		url = "https://maven.parchmentmc.org"
 	}
+	maven {
+		name = 'Amber Maven'
+		url = 'https://raw.githubusercontent.com/iamkaf/modresources/main/maven/'
+	}
 }
 
 dependencies {
@@ -47,6 +51,8 @@ dependencies {
 		exclude group: "net.fabricmc"
 		exclude group: "remapped.net.fabricmc"
 	}
+
+	implementation "com.iamkaf:amber-fabric:${project.amber_version}"
 }
 
 processResources {
