@@ -19,6 +19,7 @@ abstract class TridentItemMixin {
     @Unique
     private static boolean snowCheck(Player instance) {
         if (instance.isInWaterOrRain()) {
+            FireTridentMod.lastCheckFireAspect = false;
             return true;
         } else if (FireTridentMod.isInSnow(instance)) {
             ItemStack item = instance.getActiveItem();
@@ -28,10 +29,10 @@ abstract class TridentItemMixin {
                 return fireAspect;
             } else {
                 FireTridentMod.LOGGER.warn("Didn't get an instance of TridentItem back for the fire aspect check");
-                FireTridentMod.lastCheckFireAspect = false;
             }
         }
 
+        FireTridentMod.lastCheckFireAspect = false;
         return false;
     }
 
