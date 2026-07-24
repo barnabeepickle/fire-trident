@@ -24,9 +24,6 @@ public class FireTridentMod implements ModInitializer {
 
 	public static boolean lastCheckFireAspect = false;
 
-	public static final Identifier FIRE_ASPECT = Identifier.withDefaultNamespace("fire_aspect");
-
-	public static final Identifier TRIDENT_SPIN_TEXTURE = Identifier.withDefaultNamespace("textures/entity/trident_riptide.png");
 	public static final Identifier TRIDENT_FIRE_SPIN_TEXTURE = Identifier.fromNamespaceAndPath(Tags.MODID, "textures/entity/trident_riptide_fire.png");
 
 	public static boolean isInSnow(Entity entity) {
@@ -56,21 +53,5 @@ public class FireTridentMod implements ModInitializer {
 		return false;
 	}
 
-	public static boolean replacementCheck(Player instance) {
-		if (instance.isInWaterOrRain()) {
-			return true;
-		} else if (FireTridentMod.isInSnow(instance)) {
-			ItemStack item = instance.getActiveItem();
-			if (item.getItem() instanceof TridentItem) {
-				boolean fireAspect = FireTridentMod.checkForEnchant(item, FireTridentMod.FIRE_ASPECT);
-				FireTridentMod.lastCheckFireAspect = fireAspect;
-				return fireAspect;
-			} else {
-				FireTridentMod.LOGGER.warn("Didn't get an instance of TridentItem back for the fire aspect check");
-				FireTridentMod.lastCheckFireAspect = false;
-			}
-		}
 
-		return false;
-	}
 }
