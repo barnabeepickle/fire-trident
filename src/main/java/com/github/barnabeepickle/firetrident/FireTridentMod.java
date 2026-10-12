@@ -3,8 +3,9 @@ package com.github.barnabeepickle.firetrident;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
@@ -25,7 +26,7 @@ public class FireTridentMod {
 
     public static boolean lastCheckFireAspect = false;
 
-    public static final Identifier TRIDENT_FIRE_SPIN_TEXTURE = Identifier.fromNamespaceAndPath(MODID, "textures/entity/trident_riptide_fire.png");
+    public static final ResourceLocation TRIDENT_FIRE_SPIN_TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/trident_riptide_fire.png");
 
     public FireTridentMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
@@ -38,9 +39,15 @@ public class FireTridentMod {
 
     }
 
+    public static ItemStack getActiveItem(LivingEntity instance) {
+        return instance.isUsingItem() ? instance.getUseItem() : instance.getMainHandItem();
+    }
+
     public static boolean isInSnow(Entity entity) {
         BlockPos blockPos = entity.blockPosition();
-        return entity.level().precipitationAt(blockPos) == Biome.Precipitation.SNOW || entity.level().precipitationAt(BlockPos.containing((double)blockPos.getX(), entity.getBoundingBox().maxY, (double)blockPos.getZ())) == Biome.Precipitation.SNOW;
+        Biome biome = entity.level().getBiome(blockPos).value();
+
+        return biome.getPrecipitationAt(blockPos) == Biome.Precipitation.SNOW || biome.getPrecipitationAt(BlockPos.containing((double)blockPos.getX(), entity.getBoundingBox().maxY, (double)blockPos.getZ())) == Biome.Precipitation.SNOW;
     }
 
     public static boolean isInWaterOrRainOrSnow(Entity entity) {
@@ -49,7 +56,7 @@ public class FireTridentMod {
         } else return FireTridentMod.isInSnow(entity);
     }
 
-    public static boolean checkForEnchant(ItemStack item, Identifier enchant) {
+    public static boolean checkForEnchant(ItemStack item, ResourceLocation enchant) {
         ItemEnchantments enchants = item.getTagEnchantments();
         if (enchants.isEmpty()) {
             return true;

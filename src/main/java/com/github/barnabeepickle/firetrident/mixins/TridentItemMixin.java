@@ -1,7 +1,7 @@
 package com.github.barnabeepickle.firetrident.mixins;
 
 import com.github.barnabeepickle.firetrident.FireTridentMod;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TridentItem;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(TridentItem.class)
 abstract class TridentItemMixin {
     @Unique
-    private static final Identifier FIRE_ASPECT = Identifier.withDefaultNamespace("fire_aspect");
+    private static final ResourceLocation FIRE_ASPECT = ResourceLocation.withDefaultNamespace("fire_aspect");
 
     @Unique
     private static boolean fire_trident$snowCheck(Player instance) {
@@ -22,7 +22,7 @@ abstract class TridentItemMixin {
             FireTridentMod.lastCheckFireAspect = false;
             return true;
         } else if (FireTridentMod.isInSnow(instance)) {
-            ItemStack item = instance.getActiveItem();
+            ItemStack item = FireTridentMod.getActiveItem(instance);
             if (item.getItem() instanceof TridentItem) {
                 boolean fireAspect = FireTridentMod.checkForEnchant(item, FIRE_ASPECT);
                 FireTridentMod.lastCheckFireAspect = fireAspect;
