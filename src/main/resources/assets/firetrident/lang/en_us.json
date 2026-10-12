@@ -1,0 +1,13 @@
+{
+  "itemGroup.firetrident": "Example Mod Tab",
+  "block.firetrident.example_block": "Example Block",
+  "item.firetrident.example_item": "Example Item",
+
+  "firetrident.configuration.title": "Fire-Trident Configs",
+  "firetrident.configuration.section.firetrident.common.toml": "Fire-Trident Configs",
+  "firetrident.configuration.section.firetrident.common.toml.title": "Fire-Trident Configs",
+  "firetrident.configuration.items": "Item List",
+  "firetrident.configuration.logDirtBlock": "Log Dirt Block",
+  "firetrident.configuration.magicNumberIntroduction": "Magic Number Text",
+  "firetrident.configuration.magicNumber": "Magic Number"
+}
