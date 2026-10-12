@@ -17,7 +17,7 @@ abstract class TridentItemMixin {
     private static final Identifier FIRE_ASPECT = Identifier.withDefaultNamespace("fire_aspect");
 
     @Unique
-    private static boolean snowCheck(Player instance) {
+    private static boolean fire_trident$snowCheck(Player instance) {
         if (instance.isInWaterOrRain()) {
             FireTridentMod.lastCheckFireAspect = false;
             return true;
@@ -39,12 +39,12 @@ abstract class TridentItemMixin {
     @Redirect(method = "use",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isInWaterOrRain()Z"))
     private boolean replaceUse(Player instance) {
-        return snowCheck(instance);
+        return fire_trident$snowCheck(instance);
     }
 
     @Redirect(method = "releaseUsing",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isInWaterOrRain()Z"))
     private boolean replaceReleaseUsing(Player instance) {
-        return snowCheck(instance);
+        return fire_trident$snowCheck(instance);
     }
 }
